@@ -15,11 +15,5 @@
     <Folder Include="Features\Templates\Handlers\Queries\" />
     <Folder Include="Features\Templates\Requests\Command\" />
     <Folder Include="Features\Templates\Requests\Queries\" />
-    <Folder Include="Features\LeaveRequests\Handlers\Command\" />
-    <Folder Include="Features\LeaveRequests\Requests\Command\" />
-    <Folder Include="Features\LeaveAllocations\Handlers\Command\" />
-    <Folder Include="Features\LeaveAllocations\Requests\Command\" />
-    <Folder Include="Features\LeaveTypes\Handlers\Commands\" />
-    <Folder Include="Features\LeaveTypes\Requests\Commands\" />
   </ItemGroup>
 </Project>

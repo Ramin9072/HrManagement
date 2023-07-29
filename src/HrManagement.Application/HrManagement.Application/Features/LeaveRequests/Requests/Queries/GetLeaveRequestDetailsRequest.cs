@@ -1,7 +1,5 @@
 ﻿using HrManagement.Application.DTOs.LeaveRequest;
 using MediatR;
-using System;
-using System.Text;
 
 namespace HrManagement.Application.Features.LeaveRequests.Requests.Queries
 {

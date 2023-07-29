@@ -5,6 +5,6 @@ namespace HrManagement.Application.Features.LeaveAllocations.Requests.Queries
 {
     public class GetLeaveAllocationRequest : IRequest<LeaveAllocationDto>
     {
-        public int Id { get;set; }
+        public int Id { get; set; }
     }
 }
