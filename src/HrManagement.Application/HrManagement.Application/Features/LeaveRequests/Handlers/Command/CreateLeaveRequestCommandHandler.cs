@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
+using HrManagement.Application.DTOs.LeaveRequest.Validation;
 using HrManagement.Application.Features.LeaveRequests.Requests.Command;
 using HrManagement.Application.Persistence.Contracts;
 using HrManagement.Domain;
 using MediatR;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -21,6 +23,15 @@ namespace HrManagement.Application.Features.LeaveRequests.Handlers.Command
 
         public async Task<int> Handle(CreateLeaveRequestCommand request, CancellationToken cancellationToken)
         {
+            #region Validation
+
+            var validation =new CreateLeaveRequestValidation();
+            var result = await validation.ValidateAsync(request.CreateLeaveRequestDTO);
+            if (result.IsValid == false)
+                throw new Exception(); 
+
+            #endregion
+
             var leaveRequestMaped = _mapper.Map<LeaveRequest>(request.CreateLeaveRequestDTO);
             var leaveRequestout = await _leaveRequestRepository.Add(leaveRequestMaped);
             return leaveRequestMaped.Id;
