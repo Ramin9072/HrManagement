@@ -1,5 +1,4 @@
-﻿using HrManagement.Application.DTOs.LeaveRequest;
-using HrManagement.Application.DTOs.LeaveRequest.DTO.AbstractionDto;
+﻿using HrManagement.Application.DTOs.LeaveRequest.DTO.AbstractionDto;
 using MediatR;
 
 namespace HrManagement.Application.Features.LeaveRequests.Requests.Command

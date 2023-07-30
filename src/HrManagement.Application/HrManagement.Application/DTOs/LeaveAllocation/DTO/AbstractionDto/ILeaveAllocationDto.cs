@@ -1,8 +1,4 @@
-﻿using HrManagement.Application.DTOs.Common;
-using HrManagement.Application.DTOs.LeaveType.DTO;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using HrManagement.Application.DTOs.LeaveType.DTO;
 
 namespace HrManagement.Application.DTOs.LeaveAllocation.DTO.AbstractionDto
 {
