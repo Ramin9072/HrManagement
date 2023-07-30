@@ -1,9 +1,8 @@
-﻿using HrManagement.Application.DTOs.Common;
-using System;
+﻿using System;
 
-namespace HrManagement.Application.DTOs.LeaveRequest
+namespace HrManagement.Application.DTOs.LeaveRequest.DTO.AbstractionDto
 {
-    public class UpdateLeaveRequestDto : BaseDTO
+    public interface IUpdateLeaveRequestDto
     {
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }

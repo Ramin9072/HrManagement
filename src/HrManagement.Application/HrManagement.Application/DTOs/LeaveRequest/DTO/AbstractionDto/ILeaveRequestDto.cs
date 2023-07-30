@@ -1,12 +1,10 @@
-﻿using HrManagement.Application.DTOs.Common;
-using HrManagement.Application.DTOs.LeaveType;
+﻿using HrManagement.Application.DTOs.LeaveType.DTO;
 using System;
 
-namespace HrManagement.Application.DTOs.LeaveRequest
+namespace HrManagement.Application.DTOs.LeaveRequest.DTO.AbstractionDto
 {
-    public class LeaveRequestDto : BaseDTO
+    public interface ILeaveRequestDto
     {
-
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
         public LeaveTypeDto LeaveType { get; set; }

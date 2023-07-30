@@ -1,10 +1,11 @@
 ﻿using HrManagement.Application.DTOs.LeaveRequest;
+using HrManagement.Application.DTOs.LeaveRequest.DTO.AbstractionDto;
 using MediatR;
 
 namespace HrManagement.Application.Features.LeaveRequests.Requests.Command
 {
     public class CreateLeaveRequestCommand : IRequest<int>
     {
-        public CreateLeaveRequestDTO CreateLeaveRequestDTO { get; set; }
+        public ILeaveRequestDto ILeaveRequestDTO { get; set; }
     }
 }

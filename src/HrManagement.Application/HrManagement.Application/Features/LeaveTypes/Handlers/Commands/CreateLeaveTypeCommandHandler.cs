@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
-using FluentValidation;
-using HrManagement.Application.DTOs.LeaveType.Validations;
+using HrManagement.Application.DTOs.LeaveType.Validations.Abstraction;
 using HrManagement.Application.Features.LeaveTypes.Requests.Commands;
 using HrManagement.Application.Persistence.Contracts;
 using HrManagement.Domain;
@@ -26,7 +25,7 @@ namespace HrManagement.Application.Features.LeaveTypes.Handlers.Commands
         {
             #region Validation
 
-            var validator = new CreateLeaveTypeDtoValidator();
+            var validator = new ILeaveTypeDtoValidator();
             var validationResult = await validator.ValidateAsync(request.LeaveTypeDto);
 
             if (validationResult.IsValid == false)

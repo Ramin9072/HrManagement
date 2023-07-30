@@ -5,10 +5,11 @@ using HrManagement.Application.Persistence.Contracts;
 
 namespace HrManagement.Application.DTOs.LeaveAllocation.Validation
 {
-    public class CreateLeaveAllocationValidation : AbstractValidator<ILeaveAllocationDto>
+    public class UpdateLeaveAllocationValidation : AbstractValidator<ILeaveAllocationDto>
     {
         private readonly ILeaveTypeRepository _leaveTypeRepository;
-        public CreateLeaveAllocationValidation(ILeaveTypeRepository leaveTypeRepository)
+
+        public UpdateLeaveAllocationValidation(ILeaveTypeRepository leaveTypeRepository)
         {
             _leaveTypeRepository = leaveTypeRepository;
             Include(new ILeaveAllocationValidation(_leaveTypeRepository));

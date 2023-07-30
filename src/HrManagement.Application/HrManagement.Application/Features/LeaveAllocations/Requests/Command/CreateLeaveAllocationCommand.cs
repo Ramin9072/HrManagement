@@ -1,10 +1,11 @@
-﻿using HrManagement.Application.DTOs.LeaveAllocation;
+﻿using HrManagement.Application.DTOs.LeaveAllocation.DTO;
+using HrManagement.Application.DTOs.LeaveAllocation.DTO.AbstractionDto;
 using MediatR;
 
 namespace HrManagement.Application.Features.LeaveAllocations.Requests.Command
 {
     public class CreateLeaveAllocationCommand : IRequest<int>
     {
-        public CreateLeaveAllocationDto CreateLeaveAllocationDto { get; set; }
+        public ILeaveAllocationDto ILeaveAllocationDto { get; set; }
     }
 }
