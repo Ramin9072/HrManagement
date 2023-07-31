@@ -4,7 +4,7 @@ using HrManagement.Application.DTOs.LeaveType.Validations.Abstraction;
 
 namespace HrManagement.Application.DTOs.LeaveType.Validations
 {
-    public class UpdateLeaveTypeValidation : AbstractValidator<LeaveTypeDto>
+    public class UpdateLeaveTypeValidation : AbstractValidator<UpdateLeaveTypeDto>
     {
         public UpdateLeaveTypeValidation()
         {
