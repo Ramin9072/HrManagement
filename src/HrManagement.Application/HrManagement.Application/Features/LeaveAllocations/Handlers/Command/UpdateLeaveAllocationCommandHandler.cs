@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using FluentValidation.Results;
 using HrManagement.Application.DTOs.LeaveAllocation.Validation;
+using HrManagement.Application.Exceptions;
 using HrManagement.Application.Features.LeaveAllocations.Requests.Command;
 using HrManagement.Application.Persistence.Contracts;
 using MediatR;
@@ -27,9 +29,9 @@ namespace HrManagement.Application.Features.LeaveAllocations.Handlers.Command
             #region Validation
 
             var validation = new UpdateLeaveAllocationValidation(_leaveTypeRepository);
-            var result = await validation.ValidateAsync(request.LeaveAllocationDto);
-            if (result.IsValid == false)
-                throw new Exception();
+            var validationResult = await validation.ValidateAsync(request.LeaveAllocationDto);
+            if (validationResult.IsValid == false)
+                throw new ValidationException(validationResult);
 
             #endregion
 
