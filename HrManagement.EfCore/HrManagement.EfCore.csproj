@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net7.0</TargetFramework>
@@ -12,6 +12,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\src\HrManagement.Application\HrManagement.Application\HrManagement.Application.csproj" />
 	  <ProjectReference Include="..\src\HrManagement.Domain\HrManagement.Domain.csproj" />
 	</ItemGroup>
 
