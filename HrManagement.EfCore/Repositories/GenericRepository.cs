@@ -1,4 +1,4 @@
-﻿using HrManagement.Application.Persistence.Contracts.GenericRepository;
+﻿using HrManagement.Application.Contracts.Persistence.GenericRepository;
 using Microsoft.EntityFrameworkCore;
 
 namespace HrManagement.EfCore.Repositories

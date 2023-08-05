@@ -1,4 +1,4 @@
-﻿using HrManagement.Application.Persistence.Contracts;
+﻿using HrManagement.Application.Contracts.Persistence;
 using HrManagement.Domain;
 
 namespace HrManagement.EfCore.Repositories

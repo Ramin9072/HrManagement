@@ -1,9 +1,9 @@
-﻿using HrManagement.Application.Persistence.Contracts.GenericRepository;
+﻿using HrManagement.Application.Contracts.Persistence.GenericRepository;
 using HrManagement.Domain;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace HrManagement.Application.Persistence.Contracts
+namespace HrManagement.Application.Contracts.Persistence
 {
     public interface ILeaveRequestRepository : IGenericRepository<LeaveRequest>
     {

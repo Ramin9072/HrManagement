@@ -1,6 +1,6 @@
-﻿using HrManagement.Application.Exceptions;
+﻿using HrManagement.Application.Contracts.Persistence;
+using HrManagement.Application.Exceptions;
 using HrManagement.Application.Features.LeaveRequests.Requests.Command;
-using HrManagement.Application.Persistence.Contracts;
 using HrManagement.Domain;
 using MediatR;
 using System.Threading;

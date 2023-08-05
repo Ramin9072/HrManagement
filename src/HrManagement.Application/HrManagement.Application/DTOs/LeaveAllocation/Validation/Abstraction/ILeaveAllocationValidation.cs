@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
+using HrManagement.Application.Contracts.Persistence;
 using HrManagement.Application.DTOs.LeaveAllocation.DTO.AbstractionDto;
-using HrManagement.Application.Persistence.Contracts;
 
 namespace HrManagement.Application.DTOs.LeaveAllocation.Validation.Abstraction
 {

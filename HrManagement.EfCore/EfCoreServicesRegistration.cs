@@ -1,6 +1,6 @@
 ﻿using Autofac;
-using HrManagement.Application.Persistence.Contracts;
-using HrManagement.Application.Persistence.Contracts.GenericRepository;
+using HrManagement.Application.Contracts.Persistence;
+using HrManagement.Application.Contracts.Persistence.GenericRepository;
 using HrManagement.Domain;
 using HrManagement.EfCore.Repositories;
 using Microsoft.EntityFrameworkCore;

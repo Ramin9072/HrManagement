@@ -1,8 +1,7 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace HrManagement.Application.Persistence.Contracts.GenericRepository
+namespace HrManagement.Application.Contracts.Persistence.GenericRepository
 {
     public interface IGenericRepository<T> where T : class
     {

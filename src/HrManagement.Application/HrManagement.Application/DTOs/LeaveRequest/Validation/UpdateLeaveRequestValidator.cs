@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
+using HrManagement.Application.Contracts.Persistence;
 using HrManagement.Application.DTOs.LeaveRequest.DTO.AbstractionDto;
 using HrManagement.Application.DTOs.LeaveRequest.Validation.Abstraction;
-using HrManagement.Application.Persistence.Contracts;
 
 namespace HrManagement.Application.DTOs.LeaveRequest.Validation
 {

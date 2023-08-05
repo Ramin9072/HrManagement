@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
+using HrManagement.Application.Contracts.Persistence;
 using HrManagement.Application.DTOs.LeaveType.Validations;
 using HrManagement.Application.Features.LeaveTypes.Requests.Commands;
-using HrManagement.Application.Persistence.Contracts;
 using HrManagement.Application.Responses;
 using HrManagement.Domain;
 using MediatR;

@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
+using HrManagement.Application.Contracts.Persistence;
 using HrManagement.Application.DTOs.LeaveAllocation.DTO;
 using HrManagement.Application.Features.LeaveAllocations.Requests.Queries;
-using HrManagement.Application.Persistence.Contracts;
 using MediatR;
 using System.Collections.Generic;
 using System.Threading;

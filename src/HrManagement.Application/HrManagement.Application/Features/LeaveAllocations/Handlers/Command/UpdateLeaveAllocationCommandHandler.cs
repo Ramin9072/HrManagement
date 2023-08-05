@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
+using HrManagement.Application.Contracts.Persistence;
 using HrManagement.Application.DTOs.LeaveAllocation.Validation;
 using HrManagement.Application.Exceptions;
 using HrManagement.Application.Features.LeaveAllocations.Requests.Command;
-using HrManagement.Application.Persistence.Contracts;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
