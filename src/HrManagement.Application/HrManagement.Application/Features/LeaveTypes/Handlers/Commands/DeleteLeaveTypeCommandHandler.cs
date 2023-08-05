@@ -1,5 +1,4 @@
-﻿using FluentValidation.Results;
-using HrManagement.Application.Exceptions;
+﻿using HrManagement.Application.Exceptions;
 using HrManagement.Application.Features.LeaveTypes.Requests.Commands;
 using HrManagement.Application.Persistence.Contracts;
 using HrManagement.Domain;
@@ -22,7 +21,7 @@ namespace HrManagement.Application.Features.LeaveTypes.Handlers.Commands
         {
             var leaveType = await _leaveTypeRepository.GetById(request.Id);
             if (leaveType == null)
-                throw new NotFoundException(nameof(LeaveType),request.Id);
+                throw new NotFoundException(nameof(LeaveType), request.Id);
 
             await _leaveTypeRepository.Delete(leaveType);
         }

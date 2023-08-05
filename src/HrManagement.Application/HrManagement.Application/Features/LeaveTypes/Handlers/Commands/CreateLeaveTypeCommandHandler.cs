@@ -1,14 +1,10 @@
 ﻿using AutoMapper;
-using FluentValidation.Results;
 using HrManagement.Application.DTOs.LeaveType.Validations;
-using HrManagement.Application.DTOs.LeaveType.Validations.Abstraction;
-using HrManagement.Application.Exceptions;
 using HrManagement.Application.Features.LeaveTypes.Requests.Commands;
 using HrManagement.Application.Persistence.Contracts;
 using HrManagement.Application.Responses;
 using HrManagement.Domain;
 using MediatR;
-using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -48,12 +44,12 @@ namespace HrManagement.Application.Features.LeaveTypes.Handlers.Commands
             var leaveTypeMap = _mapper.Map<LeaveType>(request.LeaveTypeDto);
             var leavetypeSaved = await _leaveTypeRepository.Add(leaveTypeMap);
 
-            var result =  response
+            var result = response
                 .Success(true)
                 .Message("Creation successFull")
                 .Id(leaveTypeMap.Id).Create();
 
-            return result; 
+            return result;
         }
     }
 }

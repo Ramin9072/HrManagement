@@ -9,8 +9,8 @@ namespace HrManagement.Application.Persistence.Contracts.GenericRepository
         Task<T> GetById(int id);
         Task<IReadOnlyList<T>> GetAll();
         Task<bool> Exist(int id);
-        Task<T> Add(T entory);
+        Task<T> Add(T entity);
         Task<T> Update(T entity);
-        Task<T> Delete(T entity);
+        Task Delete(T entity);
     }
 }

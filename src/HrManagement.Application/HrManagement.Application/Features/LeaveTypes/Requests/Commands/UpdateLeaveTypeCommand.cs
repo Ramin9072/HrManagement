@@ -1,5 +1,4 @@
-﻿using HrManagement.Application.DTOs.LeaveAllocation.DTO;
-using HrManagement.Application.DTOs.LeaveType.DTO;
+﻿using HrManagement.Application.DTOs.LeaveType.DTO;
 using MediatR;
 
 namespace HrManagement.Application.Features.LeaveTypes.Requests.Commands

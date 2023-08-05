@@ -23,8 +23,8 @@ namespace HrManagement.Application.Features.LeaveRequests.Handlers.Command
             var leaveRequest = await _leaveRequestRepository.GetById(request.Id);
 
             if (leaveRequest == null)
-                throw new NotFoundException(nameof(LeaveRequest),request.Id);
-            
+                throw new NotFoundException(nameof(LeaveRequest), request.Id);
+
             await _leaveRequestRepository.Delete(leaveRequest);
         }
     }

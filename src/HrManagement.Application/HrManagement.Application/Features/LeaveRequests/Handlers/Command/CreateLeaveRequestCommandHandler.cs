@@ -1,12 +1,10 @@
 ﻿using AutoMapper;
-using FluentValidation.Results;
 using HrManagement.Application.DTOs.LeaveRequest.Validation;
 using HrManagement.Application.Exceptions;
 using HrManagement.Application.Features.LeaveRequests.Requests.Command;
 using HrManagement.Application.Persistence.Contracts;
 using HrManagement.Domain;
 using MediatR;
-using System;
 using System.Threading;
 using System.Threading.Tasks;
 

@@ -1,11 +1,9 @@
 ﻿using AutoMapper;
 using HrManagement.Application.DTOs.LeaveType.Validations;
-using HrManagement.Application.DTOs.LeaveType.Validations.Abstraction;
 using HrManagement.Application.Exceptions;
 using HrManagement.Application.Features.LeaveTypes.Requests.Commands;
 using HrManagement.Application.Persistence.Contracts;
 using MediatR;
-using System;
 using System.Threading;
 using System.Threading.Tasks;
 

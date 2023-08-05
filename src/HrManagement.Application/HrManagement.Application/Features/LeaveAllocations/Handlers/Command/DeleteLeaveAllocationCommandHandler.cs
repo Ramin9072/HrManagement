@@ -20,7 +20,7 @@ namespace HrManagement.Application.Features.LeaveAllocations.Handlers.Command
         public async Task Handle(DeleteLeaveAllocationCommand request, CancellationToken cancellationToken)
         {
             var allocation = await _leaveAllocationRepository.GetById(request.DeleteLeaveAllocationDto.Id);
-            
+
             if (allocation == null)
                 throw new NotFoundException(nameof(LeaveAllocation), request.DeleteLeaveAllocationDto.Id);
 

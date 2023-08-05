@@ -15,6 +15,7 @@
     <ProjectReference Include="..\..\HrManagement.Domain\HrManagement.Domain.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DTOs\Employee\Validation\Abstraction\" />
     <Folder Include="Features\Templates\Handlers\Command\" />
     <Folder Include="Features\Templates\Handlers\Queries\" />
     <Folder Include="Features\Templates\Requests\Command\" />
