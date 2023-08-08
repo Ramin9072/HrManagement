@@ -1,7 +1,5 @@
-﻿using Autofac;
-using HrManagement.Application.Contracts.Persistence;
+﻿using HrManagement.Application.Contracts.Persistence;
 using HrManagement.Application.Contracts.Persistence.GenericRepository;
-using HrManagement.Domain;
 using HrManagement.EfCore.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -13,7 +11,7 @@ namespace HrManagement.EfCore
     {
 
         // IOC
-        public static IServiceCollection configureServices(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection ConfigureEfCoreServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<LeaveManagementDbContext>(options =>
             {
