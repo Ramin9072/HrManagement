@@ -4,6 +4,10 @@ namespace HrManagement.Domain
 {
     public sealed class LeaveAllocation : BaseDomainEntity
     {
+        protected LeaveAllocation()
+        {
+            
+        }
         public LeaveAllocation(int numberOfDays, LeaveType leaveType, int leaveTypeId, int period)
         {
             NumberOfDays = numberOfDays;

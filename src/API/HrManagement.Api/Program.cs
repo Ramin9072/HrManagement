@@ -11,8 +11,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.ConfigureEfCoreServices(builder.Configuration);
-builder.Services.ConfigureInfrastructureServices(builder.Configuration);
+builder.Services.ConfigureEfCoreServices(builder.Configuration); // wireup
+builder.Services.ConfigureInfrastructureServices(builder.Configuration); 
 builder.Services.ConfigureApplicationServices();
 
 builder.Services.AddEndpointsApiExplorer();

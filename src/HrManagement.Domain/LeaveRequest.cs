@@ -5,6 +5,10 @@ namespace HrManagement.Domain
 {
     public sealed class LeaveRequest : BaseDomainEntity
     {
+        protected LeaveRequest()
+        {
+                
+        }
         public LeaveRequest(DateTime startDate, DateTime endDate, LeaveType leaveType,
             int leaveTypeId, DateTime dateRequested,
             string comment, DateTime? dateActioned, bool? approved, bool canceled)

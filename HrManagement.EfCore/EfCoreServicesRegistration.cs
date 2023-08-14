@@ -15,7 +15,7 @@ namespace HrManagement.EfCore
         {
             services.AddDbContext<LeaveManagementDbContext>(options =>
             {
-                options.UseSqlServer(configuration.GetConnectionString("databaseConnection"));
+                options.UseSqlServer(configuration.GetConnectionString("Test"));
             });
 
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
