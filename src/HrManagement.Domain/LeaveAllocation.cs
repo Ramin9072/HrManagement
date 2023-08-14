@@ -6,7 +6,7 @@ namespace HrManagement.Domain
     {
         protected LeaveAllocation()
         {
-            
+
         }
         public LeaveAllocation(int numberOfDays, LeaveType leaveType, int leaveTypeId, int period)
         {

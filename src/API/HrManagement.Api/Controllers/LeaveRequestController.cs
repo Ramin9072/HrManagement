@@ -2,7 +2,6 @@
 using HrManagement.Application.DTOs.LeaveRequest.DTO.AbstractionDto;
 using HrManagement.Application.Features.LeaveRequests.Requests.Command;
 using HrManagement.Application.Features.LeaveRequests.Requests.Queries;
-using HrManagement.Application.Features.LeaveTypes.Requests.Commands;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,7 +21,7 @@ namespace HrManagement.Api.Controllers
         [HttpGet]
         public async Task<ActionResult<List<LeaveRequestDto>>> GetList()
         {
-            var leaveRequests =await _mediator.Send(new GetLeaveRequestListRequest());
+            var leaveRequests = await _mediator.Send(new GetLeaveRequestListRequest());
             return Ok(leaveRequests);
         }
 

@@ -4,10 +4,11 @@ namespace HrManagement.Domain
 {
     public sealed class LeaveType : BaseDomainEntity
     {
-        public LeaveType(string name, int defaultDay)
+        public LeaveType(string name, int defaultDay, int id)
         {
             Name = name;
             DefaultDay = defaultDay;
+            Id = id;
         }
 
         public string Name { get; private set; }
@@ -18,6 +19,13 @@ namespace HrManagement.Domain
 
             public string _name;
             public int _defaultDay;
+            public int _id;
+
+            public Builder Id(int id)
+            {
+                _id = id;
+                return this;
+            }
 
             public Builder Name(string name)
             {
@@ -33,7 +41,7 @@ namespace HrManagement.Domain
 
             public LeaveType Create()
             {
-                return new LeaveType(_name, _defaultDay);
+                return new LeaveType(_name, _defaultDay,_id);
             }
         }
     }

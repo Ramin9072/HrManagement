@@ -1,8 +1,8 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+﻿using HrManagement.Application.Contracts.Infrastructure.Abstraction;
 using HrManagement.Application.DTOs.Email;
-using HrManagement.Application.Contracts.Infrastructure.Abstraction;
 using HrManagement.Infrastructure.Email;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace HrManagement.Infrastructure
 {

@@ -16,7 +16,7 @@ namespace HrManagement.EfCore.Repositories
         public async Task<List<LeaveAllocation>> GetLeaveAllocationsWithDetails()
         {
             var leaveAllocationList = await _context.LeaveAllocations
-                .Include(p=>p.LeaveType)
+                .Include(p => p.LeaveType)
                 .ToListAsync();
             return leaveAllocationList;
         }
@@ -25,9 +25,9 @@ namespace HrManagement.EfCore.Repositories
         {
             var leaveAllocation = await _context.LeaveAllocations
                 .Include(p => p.LeaveType)
-                .FirstOrDefaultAsync(p=>p.Id == id);
+                .FirstOrDefaultAsync(p => p.Id == id);
             return leaveAllocation;
-            
+
         }
     }
 }

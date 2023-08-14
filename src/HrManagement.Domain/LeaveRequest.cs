@@ -7,7 +7,7 @@ namespace HrManagement.Domain
     {
         protected LeaveRequest()
         {
-                
+
         }
         public LeaveRequest(DateTime startDate, DateTime endDate, LeaveType leaveType,
             int leaveTypeId, DateTime dateRequested,

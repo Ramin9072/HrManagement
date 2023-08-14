@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace HrManagement.EfCore
 {
-    public static class EfCoreServicesRegistration 
+    public static class EfCoreServicesRegistration
     {
 
         // IOC

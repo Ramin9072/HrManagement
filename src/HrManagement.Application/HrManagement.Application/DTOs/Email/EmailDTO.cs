@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace HrManagement.Application.DTOs.Email
+﻿namespace HrManagement.Application.DTOs.Email
 {
     public class EmailDTO
     {
@@ -11,7 +7,8 @@ namespace HrManagement.Application.DTOs.Email
         public string Body { get; set; }
     }
 
-    public class EmailSetting {
+    public class EmailSetting
+    {
         public string ApiKey { get; set; }
         public string FromAddress { get; set; }
         public string FromName { get; set; }

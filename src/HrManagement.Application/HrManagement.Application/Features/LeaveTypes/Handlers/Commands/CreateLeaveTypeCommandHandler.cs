@@ -16,7 +16,7 @@ namespace HrManagement.Application.Features.LeaveTypes.Handlers.Commands
     public class CreateLeaveTypeCommandHandler : IRequestHandler<CreateLeaveTypeCommand, BaseCommandResponse>
     {
         private readonly ILeaveTypeRepository _leaveTypeRepository;
-        private readonly IEmailSender _emailSender; 
+        private readonly IEmailSender _emailSender;
         private readonly IMapper _mapper;
 
         public CreateLeaveTypeCommandHandler(ILeaveTypeRepository leaveTypeRepository,

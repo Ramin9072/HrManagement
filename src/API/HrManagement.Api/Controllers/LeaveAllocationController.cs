@@ -31,14 +31,14 @@ namespace HrManagement.Api.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<LeaveAllocationDto>> Get(int id)
         {
-            var leaveAllocation =await _mediator.Send(new GetLeaveAllocationRequest { Id = id });
+            var leaveAllocation = await _mediator.Send(new GetLeaveAllocationRequest { Id = id });
             return Ok(leaveAllocation);
         }
 
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] ILeaveAllocationDto createLeaveAllocationDto)
         {
-            var request = new CreateLeaveAllocationCommand { ILeaveAllocationDto = createLeaveAllocationDto};
+            var request = new CreateLeaveAllocationCommand { ILeaveAllocationDto = createLeaveAllocationDto };
             var response = _mediator.Send(request);
             return Ok(response);
         }
@@ -54,7 +54,7 @@ namespace HrManagement.Api.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete([FromBody] DeleteLeaveAllocationDto deleteLeaveAllocationDto)
         {
-            var request =new DeleteLeaveAllocationCommand { DeleteLeaveAllocationDto = deleteLeaveAllocationDto };
+            var request = new DeleteLeaveAllocationCommand { DeleteLeaveAllocationDto = deleteLeaveAllocationDto };
             await _mediator.Send(request);
             return NoContent();
         }

@@ -1,6 +1,6 @@
 using HrManagement.Application;
-using HrManagement.Infrastructure;
 using HrManagement.EfCore;
+using HrManagement.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 string corsPolicy = "CorsPolicy";
@@ -12,7 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.ConfigureEfCoreServices(builder.Configuration); // wireup
-builder.Services.ConfigureInfrastructureServices(builder.Configuration); 
+builder.Services.ConfigureInfrastructureServices(builder.Configuration);
 builder.Services.ConfigureApplicationServices();
 
 builder.Services.AddEndpointsApiExplorer();
