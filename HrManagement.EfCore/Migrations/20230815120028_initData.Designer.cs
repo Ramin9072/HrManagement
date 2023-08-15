@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HrManagement.EfCore.Migrations
 {
     [DbContext(typeof(LeaveManagementDbContext))]
-    [Migration("20230814120928_CreateSeedDataForLeaveType1")]
-    partial class CreateSeedDataForLeaveType1
+    [Migration("20230815120028_initData")]
+    partial class initData
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
