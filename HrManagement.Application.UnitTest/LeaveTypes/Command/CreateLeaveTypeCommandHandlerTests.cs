@@ -29,7 +29,6 @@ namespace HrManagement.Application.UnitTest.LeaveTypes.Command
                 DefaultDay = 15,
                 Name = "Test Dto"
             };
-
         }
         [Fact]
         public async Task CreateLeaveType()
