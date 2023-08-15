@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using HrManagement.Application.Contracts.Persistence;
+using HrManagement.Application.DTOs.LeaveRequest.DTO;
 using HrManagement.Application.Features.LeaveRequests.Handlers.Queries;
 using HrManagement.Application.Features.LeaveRequests.Requests.Queries;
 using HrManagement.Application.Profiles;
@@ -24,14 +25,15 @@ namespace HrManagement.Application.UnitTest.LeaveTypes.Queries
 
 
         [Fact]
-        public async Task GetLeaveRequestTest()
+        public async Task GetLeaveRequest_Same_Type_Test()
         {
             var handler = new GetLeaveRequestListRequestHandler(_mockLeaveRequestRepo.Object, _mapper);
             var result = await handler.Handle(new GetLeaveRequestListRequest(), CancellationToken.None);
 
-            result.ShouldBeOfType<List<LeaveRequest>>();
+            result.ShouldBeOfType<List<LeaveRequestDto>>();
             result.Count.ShouldBe(1);
 
         }
+
     }
 }
