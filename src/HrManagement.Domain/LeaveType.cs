@@ -41,7 +41,7 @@ namespace HrManagement.Domain
 
             public LeaveType Create()
             {
-                return new LeaveType(_name, _defaultDay,_id);
+                return new LeaveType(_name, _defaultDay, _id);
             }
         }
     }

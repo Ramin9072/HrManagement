@@ -1,6 +1,8 @@
 ﻿
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
+
 
 namespace HrManagement.Application
 {
@@ -10,6 +12,7 @@ namespace HrManagement.Application
         {
             //services.AddAutoMapper(typeof(MappingProfile)); // فقط مختص به همین پروفایل است
             services.AddAutoMapper(Assembly.GetExecutingAssembly()); // هر آنچه که با اتومتر باشد برداشته میشود
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
         }
     }
 }
