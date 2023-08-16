@@ -5,7 +5,6 @@ using HrManagement.Application.Features.LeaveRequests.Handlers.Queries;
 using HrManagement.Application.Features.LeaveRequests.Requests.Queries;
 using HrManagement.Application.Profiles;
 using HrManagement.Application.UnitTest.Mocks;
-using HrManagement.Domain;
 using Moq;
 using Shouldly;
 

@@ -40,7 +40,7 @@ namespace HrManagement.Application.UnitTest.LeaveTypes.Command
             }, CancellationToken.None);
 
             result.ShouldBeOfType<int>();
-            var leaveTypes =await _mockLeaveTypeRepo.Object.GetAll();
+            var leaveTypes = await _mockLeaveTypeRepo.Object.GetAll();
             leaveTypes.Count.ShouldBe(3);
         }
     }

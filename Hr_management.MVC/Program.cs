@@ -1,15 +1,23 @@
+using Hr_management.MVC.Contracts.LeaveTypeStorage;
+using Hr_management.MVC.Services.Base;
+using System.Reflection;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+var apiBaseAddress = builder.Configuration.GetSection("ApiBaseAddress").Value;
+
+builder.Services.AddHttpClient<IClient, Client>(p => p.BaseAddress = new Uri(apiBaseAddress));
+
 builder.Services.AddControllersWithViews();
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
+builder.Services.AddSingleton<ILocalStorageService, LocalStorageService>(); // wireUp
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 

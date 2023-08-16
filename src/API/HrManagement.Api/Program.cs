@@ -18,6 +18,7 @@ builder.Services.ConfigureApplicationServices();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// CORS
 builder.Services.AddCors(p =>
 {
     p.AddPolicy(corsPolicy, r => r
