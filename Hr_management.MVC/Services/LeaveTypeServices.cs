@@ -6,7 +6,7 @@ using Hr_management.MVC.Services.Base;
 
 namespace Hr_management.MVC.Services
 {
-    public class LeaveTypeServices : BaseHttpService ,ILeaveTypeService
+    public class LeaveTypeServices : BaseHttpService, ILeaveTypeService
     {
         private readonly ILocalStorageService _localStorage;
         private readonly IClient _httpClient;
@@ -58,9 +58,29 @@ namespace Hr_management.MVC.Services
             throw new NotImplementedException();
         }
 
-        public Task<List<LeaveTypeVM>> GetLeaveTypes()
+        public async Task<List<LeaveTypeVM>> GetLeaveTypes()
         {
-            throw new NotImplementedException();
+            var response = new Response<List<LeaveTypeVM>>();
+            string cackKey = "leaveTypeList";
+            List<LeaveTypeDto> leaveTypes = new List<LeaveTypeDto>();
+
+            if (!_localStorage.Exists(cackKey))
+                _localStorage.SetStorageValue(cackKey, await _httpClient.LeaveTypeAllAsync());
+            leaveTypes = _localStorage.GetStorageValue<List<LeaveTypeDto>>(cackKey);
+            
+            var leaveTypesVM = _mapper.Map<List<LeaveTypeVM>>(leaveTypes);
+
+            if (leaveTypesVM is not null)
+            {
+                response.Success = true;
+                response.Data = leaveTypesVM;
+            }
+            else
+            {
+                response.Success = false;
+            }
+
+            return leaveTypesVM;
         }
 
         public Task UpdateLeaveType(LeaveTypeVM leaveType)

@@ -26,7 +26,6 @@ namespace Hr_management.MVC.Controllers
     public partial class Controller : ControllerBase
     {
         private IController _implementation;
-        private rea
 
         public Controller(IController implementation)
         {
@@ -66,7 +65,7 @@ namespace Hr_management.MVC.Controllers
 
             return _implementation.LeaveAllocationDELETEAsync(id, body, cancellationToken);
         }
-
+        // leave Request --------------------------------------------------
         [HttpGet, Route("api/LeaveRequest")]
         public Task<ICollection<LeaveRequestDto>> LeaveRequestAll(CancellationToken cancellationToken)
         {
@@ -107,6 +106,13 @@ namespace Hr_management.MVC.Controllers
         {
 
             return _implementation.ChangeLeaveRequestApproveAsync(id, body, cancellationToken);
+        }
+
+        [HttpGet, Route("api/LeaveType/")]
+        public Task<ICollection<LeaveTypeDto>> LeaveTypesGET(CancellationToken cancellationToken)
+        {
+
+            return _implementation.LeaveTypeAllAsync(cancellationToken);
         }
 
     }
