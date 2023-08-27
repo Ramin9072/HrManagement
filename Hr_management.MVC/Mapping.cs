@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Hr_management.MVC.Controllers;
 using Hr_management.MVC.Models;
+using Hr_management.MVC.Services.Base;
 
 namespace Hr_management.MVC
 {
@@ -10,6 +11,7 @@ namespace Hr_management.MVC
         {
             #region LeaveRequest Mapping 
             CreateMap<CreateLeaveTypeDto, CreateLeaveTypeVM>().ReverseMap();
+            CreateMap<LeaveTypeDto, LeaveTypeVM>().ReverseMap();
             
             #endregion
         }

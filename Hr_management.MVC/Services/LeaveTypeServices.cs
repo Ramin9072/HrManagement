@@ -28,7 +28,7 @@ namespace Hr_management.MVC.Services
                 CreateLeaveTypeDto createLeaveTypeDto =
                     _mapper.Map<CreateLeaveTypeDto>(leaveType);
 
-                var apiResponse = _httpClient.LeaveTypePOSTAsync(createLeaveTypeDto);
+                var apiResponse = _httpClient.LeaveTypesPOSTAsync(createLeaveTypeDto);
                 if (apiResponse.IsCompletedSuccessfully)
                 {
                     response.Data = apiResponse.Id;
@@ -65,7 +65,7 @@ namespace Hr_management.MVC.Services
             List<LeaveTypeDto> leaveTypes = new List<LeaveTypeDto>();
 
             if (!_localStorage.Exists(cackKey))
-                _localStorage.SetStorageValue(cackKey, await _httpClient.LeaveTypeAllAsync());
+                _localStorage.SetStorageValue(cackKey, await _httpClient.LeaveTypesAllAsync());
             leaveTypes = _localStorage.GetStorageValue<List<LeaveTypeDto>>(cackKey);
             
             var leaveTypesVM = _mapper.Map<List<LeaveTypeVM>>(leaveTypes);
