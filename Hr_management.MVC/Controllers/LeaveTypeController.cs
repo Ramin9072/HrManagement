@@ -1,4 +1,6 @@
 ﻿using Hr_management.MVC.Contracts.LeaveType;
+using Hr_management.MVC.Models;
+using Hr_management.MVC.Services.Base;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Hr_management.MVC.Controllers
@@ -28,6 +30,7 @@ namespace Hr_management.MVC.Controllers
             return View(leaveType);
         }
 
+
         // GET: LeaveTypeController/Create
         public ActionResult Create()
         {
@@ -37,16 +40,23 @@ namespace Hr_management.MVC.Controllers
         // POST: LeaveTypeController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<ActionResult> Create(CreateLeaveTypeVM createLeave)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+
+                var response = await _leaveTypeService.CreateLeaveType(createLeave);
+                if (response.Success)
+                {
+                    return RedirectToAction("Index");
+                }
+                ModelState.AddModelError("", response.ValidationErrors);
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                ModelState.AddModelError("", ex.Message);
             }
+            return View(createLeave);
         }
 
         // GET: LeaveTypeController/Edit/5

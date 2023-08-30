@@ -1096,7 +1096,7 @@ namespace Hr_management.MVC.Services.Base
         public virtual async System.Threading.Tasks.Task<BaseCommandResponse> LeaveTypesPOSTAsync(CreateLeaveTypeDto body, System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append("api/LeaveTypes");
+            urlBuilder_.Append("api/LeaveType");
 
             var client_ = _httpClient;
             var disposeClient_ = false;
