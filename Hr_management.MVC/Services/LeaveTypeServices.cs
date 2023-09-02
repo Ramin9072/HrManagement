@@ -1,8 +1,9 @@
 ﻿using AutoMapper;
 using Hr_management.MVC.Contracts;
 using Hr_management.MVC.Contracts.LeaveType;
-using Hr_management.MVC.Models;
+using Hr_management.MVC.Models.LeaveType;
 using Hr_management.MVC.Services.Base;
+using Microsoft.CodeAnalysis;
 
 namespace Hr_management.MVC.Services
 {
@@ -25,8 +26,7 @@ namespace Hr_management.MVC.Services
             try
             {
                 var response = new Response<int>();
-                CreateLeaveTypeDto createLeaveTypeDto =
-                    _mapper.Map<CreateLeaveTypeDto>(leaveType);
+                CreateLeaveTypeDto createLeaveTypeDto = _mapper.Map<CreateLeaveTypeDto>(leaveType);
 
                 var apiResponse = _httpClient.LeaveTypesPOSTAsync(createLeaveTypeDto);
                 if (apiResponse.IsCompletedSuccessfully)
@@ -48,14 +48,26 @@ namespace Hr_management.MVC.Services
             }
         }
 
-        public Task DeleteLeaveType(LeaveTypeVM leaveType)
+        public async Task DeleteLeaveType(LeaveTypeVM leaveType)
         {
             throw new NotImplementedException();
         }
 
-        public Task<LeaveTypeVM> GetLeaveTypeDetailById(int id)
+        public async Task<LeaveTypeVM> GetLeaveTypeDetailById(int id)
         {
-            throw new NotImplementedException();
+            var response = new Response<LeaveTypeVM>();
+            var leaveType = await _httpClient.LeaveTypesGETAsync(id);
+            var leaveTypeVm = _mapper.Map<LeaveTypeVM>(leaveType);
+            if (leaveTypeVm is not null)
+            {
+                response.Success = true;
+                response.Data = leaveTypeVm;
+            }
+            else
+            {
+                response.Success = false;
+            }
+            return leaveTypeVm;
         }
 
         public async Task<List<LeaveTypeVM>> GetLeaveTypes()
@@ -67,7 +79,7 @@ namespace Hr_management.MVC.Services
             if (!_localStorage.Exists(cackKey))
                 _localStorage.SetStorageValue(cackKey, await _httpClient.LeaveTypesAllAsync());
             leaveTypes = _localStorage.GetStorageValue<List<LeaveTypeDto>>(cackKey);
-            
+
             var leaveTypesVM = _mapper.Map<List<LeaveTypeVM>>(leaveTypes);
 
             if (leaveTypesVM is not null)
@@ -83,9 +95,24 @@ namespace Hr_management.MVC.Services
             return leaveTypesVM;
         }
 
-        public Task UpdateLeaveType(LeaveTypeVM leaveType)
+        public async Task<Response<int>> UpdateLeaveType(LeaveTypeVM leaveTypeVm)
         {
-            throw new NotImplementedException();
+            var response = new Response<int>();
+            var leaveType = _mapper.Map<LeaveTypeDto>(leaveTypeVm);
+            var apiResponse = _httpClient.LeaveTypesPUTAsync(leaveType.Id, leaveType);
+
+            if (apiResponse.IsCompletedSuccessfully)
+            {
+                response.Data = apiResponse.Id;
+                response.Success = true;
+            }
+            else
+            {
+                response.Success = false;
+            }
+            return response;
+
         }
+
     }
 }

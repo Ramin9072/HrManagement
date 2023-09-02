@@ -1,5 +1,5 @@
 ﻿using Hr_management.MVC.Contracts.LeaveType;
-using Hr_management.MVC.Models;
+using Hr_management.MVC.Models.LeaveType;
 using Hr_management.MVC.Services.Base;
 using Microsoft.AspNetCore.Mvc;
 
@@ -60,24 +60,23 @@ namespace Hr_management.MVC.Controllers
         }
 
         // GET: LeaveTypeController/Edit/5
-        public ActionResult Edit(int id)
+        public async Task<ActionResult> Edit(int id)
         {
-            return View();
+            var details = await _leaveTypeService.GetLeaveTypeDetailById(id);
+            return View(details);
         }
 
         // POST: LeaveTypeController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<ActionResult> Edit(int id, LeaveTypeVM updateLeaveTypeVM)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            var response = await _leaveTypeService.UpdateLeaveType(updateLeaveTypeVM);
+            if (response is not null)
+                return RedirectToAction("Index");
+            else
+                return View(response);
+
         }
 
         // GET: LeaveTypeController/Delete/5

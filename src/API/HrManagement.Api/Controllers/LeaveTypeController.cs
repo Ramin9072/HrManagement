@@ -37,7 +37,7 @@ namespace HrManagement.Api.Controllers
             return Ok(response);
         }
 
-        [HttpPut()]
+        [HttpPut("{Id}")]
         public async Task<ActionResult> Put([FromBody] UpdateLeaveTypeDto updateLeaveType)
         {
             var command = new UpdateLeaveTypeCommand { LeaveTypeDto = updateLeaveType };

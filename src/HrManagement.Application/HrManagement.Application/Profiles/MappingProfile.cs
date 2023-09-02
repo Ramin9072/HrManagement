@@ -29,7 +29,7 @@ namespace HrManagement.Application.Profiles
             #region LeaveType Mapping
             CreateMap<LeaveType, LeaveTypeDto>().ReverseMap();
             CreateMap<LeaveType, CreateLeaveTypeDto>().ReverseMap();
-            CreateMap<LeaveType, UpdateLeaveRequestDto>().ReverseMap();
+            CreateMap<LeaveType, UpdateLeaveTypeDto>().ReverseMap();
             #endregion
         }
     }

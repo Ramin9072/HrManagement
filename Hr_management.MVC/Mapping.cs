@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Hr_management.MVC.Controllers;
-using Hr_management.MVC.Models;
+using Hr_management.MVC.Models.LeaveType;
 using Hr_management.MVC.Services.Base;
 
 namespace Hr_management.MVC
