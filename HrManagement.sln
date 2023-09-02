@@ -25,9 +25,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HrManagement.EfCore", "HrMa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HrManagement.Api", "src\API\HrManagement.Api\HrManagement.Api.csproj", "{736BF4DD-CF65-4DE4-9F67-C4A0277C9323}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HrManagement.Application.UnitTest", "HrManagement.Application.UnitTest\HrManagement.Application.UnitTest.csproj", "{D82D8947-0EFB-4731-9A09-1487F2C90D78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HrManagement.Application.UnitTest", "HrManagement.Application.UnitTest\HrManagement.Application.UnitTest.csproj", "{D82D8947-0EFB-4731-9A09-1487F2C90D78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hr_management.MVC", "Hr_management.MVC\Hr_management.MVC.csproj", "{B440D558-B27D-489B-9DE9-F1470BED50E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hr_management.MVC", "Hr_management.MVC\Hr_management.MVC.csproj", "{B440D558-B27D-489B-9DE9-F1470BED50E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HrManagement.Identity", "HrManagement.Identity\HrManagement.Identity.csproj", "{5A427C74-58B7-4167-9DA7-B779DACE2D13}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{B440D558-B27D-489B-9DE9-F1470BED50E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B440D558-B27D-489B-9DE9-F1470BED50E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B440D558-B27D-489B-9DE9-F1470BED50E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A427C74-58B7-4167-9DA7-B779DACE2D13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A427C74-58B7-4167-9DA7-B779DACE2D13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A427C74-58B7-4167-9DA7-B779DACE2D13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A427C74-58B7-4167-9DA7-B779DACE2D13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,6 +85,7 @@ Global
 		{736BF4DD-CF65-4DE4-9F67-C4A0277C9323} = {AC0F1CE6-C564-4EA7-81C8-8461E3890D4C}
 		{D82D8947-0EFB-4731-9A09-1487F2C90D78} = {18E7760B-1034-4846-AC73-33714D40005A}
 		{B440D558-B27D-489B-9DE9-F1470BED50E3} = {E57CFE46-57BF-4007-B10C-44774E4A1CB2}
+		{5A427C74-58B7-4167-9DA7-B779DACE2D13} = {BB3F5E9E-D239-4528-B1F9-4E6C5EB51603}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {55EEB6F5-EDF8-47CB-BDD5-0AF2296065AE}
