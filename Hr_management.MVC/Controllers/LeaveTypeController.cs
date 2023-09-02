@@ -30,7 +30,6 @@ namespace Hr_management.MVC.Controllers
             return View(leaveType);
         }
 
-
         // GET: LeaveTypeController/Create
         public ActionResult Create()
         {
@@ -80,9 +79,10 @@ namespace Hr_management.MVC.Controllers
         }
 
         // GET: LeaveTypeController/Delete/5
-        public ActionResult Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            return View();
+            var leaveType = await _leaveTypeService.GetLeaveTypeDetailById(id);
+            return View(leaveType);
         }
 
         // POST: LeaveTypeController/Delete/5
@@ -92,6 +92,8 @@ namespace Hr_management.MVC.Controllers
         {
             try
             {
+                _leaveTypeService.DeleteLeaveType(id);
+
                 return RedirectToAction(nameof(Index));
             }
             catch

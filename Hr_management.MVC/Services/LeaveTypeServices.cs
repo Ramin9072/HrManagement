@@ -48,10 +48,7 @@ namespace Hr_management.MVC.Services
             }
         }
 
-        public async Task DeleteLeaveType(LeaveTypeVM leaveType)
-        {
-            throw new NotImplementedException();
-        }
+       
 
         public async Task<LeaveTypeVM> GetLeaveTypeDetailById(int id)
         {
@@ -112,6 +109,10 @@ namespace Hr_management.MVC.Services
             }
             return response;
 
+        }
+        public async Task DeleteLeaveType(int id)
+        {
+            await _httpClient.LeaveTypesDELETEAsync(id);
         }
 
     }
