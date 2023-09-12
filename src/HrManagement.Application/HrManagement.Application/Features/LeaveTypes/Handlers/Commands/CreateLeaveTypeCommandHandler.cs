@@ -41,7 +41,7 @@ namespace HrManagement.Application.Features.LeaveTypes.Handlers.Commands
                 return response
                     .Success(false)
                     .Message("Creation failed")
-                    .Errors(validationResult.Errors.Select(p => p.ErrorCode).ToList())
+                    .Errors(validationResult.Errors.Select(p => p.ErrorMessage).ToList())
                     .Create();
                 //throw new ValidationException(validationResult);
             }

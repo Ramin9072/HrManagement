@@ -36,6 +36,10 @@ namespace Hr_management.MVC.Services
                 }
                 else
                 {
+                    foreach (var item in apiResponse.Result.Errors)
+                    {
+                        response.ValidationErrors +=item;
+                    }
                     response.Success = false;
                 }
 
@@ -48,7 +52,7 @@ namespace Hr_management.MVC.Services
             }
         }
 
-       
+
 
         public async Task<LeaveTypeVM> GetLeaveTypeDetailById(int id)
         {

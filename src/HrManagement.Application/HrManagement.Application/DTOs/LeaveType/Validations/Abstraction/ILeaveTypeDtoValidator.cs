@@ -12,8 +12,8 @@ namespace HrManagement.Application.DTOs.LeaveType.Validations.Abstraction
                 .MaximumLength(50).WithMessage("{PropertyName} Must not exceed 50.");
 
             RuleFor(p => p.DefaultDay).NotEmpty().WithMessage("{PropertyName} is Required")
-                .GreaterThan(0).WithMessage("{PropertyName} Most bigger than 1.")
-                .LessThan(100).WithMessage("{PropertyName} Most exceed 100.");
+                .GreaterThan(0).WithMessage("{PropertyName} Must bigger than 1.")
+                .LessThan(100).WithMessage("{PropertyName} Must exceed 100.");
         }
     }
 }

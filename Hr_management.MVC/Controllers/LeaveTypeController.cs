@@ -43,7 +43,6 @@ namespace Hr_management.MVC.Controllers
         {
             try
             {
-
                 var response = await _leaveTypeService.CreateLeaveType(createLeave);
                 if (response.Success)
                 {
@@ -55,7 +54,7 @@ namespace Hr_management.MVC.Controllers
             {
                 ModelState.AddModelError("", ex.Message);
             }
-            return View(createLeave);
+            return View();
         }
 
         // GET: LeaveTypeController/Edit/5
@@ -70,11 +69,23 @@ namespace Hr_management.MVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit(int id, LeaveTypeVM updateLeaveTypeVM)
         {
+           
+            try
+            {
             var response = await _leaveTypeService.UpdateLeaveType(updateLeaveTypeVM);
-            if (response is not null)
-                return RedirectToAction("Index");
-            else
-                return View(response);
+
+                if (response.Success)
+                {
+                    return RedirectToAction("Index");
+                }
+                ModelState.AddModelError("", response.ValidationErrors);
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+            }
+            return View();
+
 
         }
 
