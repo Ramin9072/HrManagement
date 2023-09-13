@@ -1,6 +1,5 @@
 ﻿using Hr_management.MVC.Contracts.LeaveType;
 using Hr_management.MVC.Models.LeaveType;
-using Hr_management.MVC.Services.Base;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Hr_management.MVC.Controllers
@@ -69,10 +68,10 @@ namespace Hr_management.MVC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit(int id, LeaveTypeVM updateLeaveTypeVM)
         {
-           
+
             try
             {
-            var response = await _leaveTypeService.UpdateLeaveType(updateLeaveTypeVM);
+                var response = await _leaveTypeService.UpdateLeaveType(updateLeaveTypeVM);
 
                 if (response.Success)
                 {

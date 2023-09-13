@@ -26,21 +26,21 @@ namespace HrManagement.Application.Features.LeaveTypes.Handlers.Commands
             try
             {
 
-            
-            #region Validation
 
-            var validator = new UpdateLeaveTypeValidation();
-            var validationResult = await validator.ValidateAsync(request.LeaveTypeDto);
+                #region Validation
 
-            if (validationResult.IsValid == false)
-                throw new ValidationException(validationResult);
+                var validator = new UpdateLeaveTypeValidation();
+                var validationResult = await validator.ValidateAsync(request.LeaveTypeDto);
 
-            #endregion
-            //var oldLeaveType = await _leaveTypeRepository.GetById(request.LeaveTypeDto.Id);
-            var leaveType =_mapper.Map<LeaveType>(request.LeaveTypeDto);
-            await _leaveTypeRepository.Update(leaveType);
+                if (validationResult.IsValid == false)
+                    throw new ValidationException(validationResult);
 
-            return Unit.Value; // مقدار خاصی نیست و میتواند همه نوع باشد بسته به موارد خروجی
+                #endregion
+                //var oldLeaveType = await _leaveTypeRepository.GetById(request.LeaveTypeDto.Id);
+                var leaveType = _mapper.Map<LeaveType>(request.LeaveTypeDto);
+                await _leaveTypeRepository.Update(leaveType);
+
+                return Unit.Value; // مقدار خاصی نیست و میتواند همه نوع باشد بسته به موارد خروجی
             }
             catch (System.Exception ex)
             {

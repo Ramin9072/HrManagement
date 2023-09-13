@@ -3,7 +3,6 @@ using Hr_management.MVC.Contracts;
 using Hr_management.MVC.Contracts.LeaveType;
 using Hr_management.MVC.Models.LeaveType;
 using Hr_management.MVC.Services.Base;
-using Microsoft.CodeAnalysis;
 
 namespace Hr_management.MVC.Services
 {
@@ -38,7 +37,7 @@ namespace Hr_management.MVC.Services
                 {
                     foreach (var item in apiResponse.Result.Errors)
                     {
-                        response.ValidationErrors +=item;
+                        response.ValidationErrors += item;
                     }
                     response.Success = false;
                 }
@@ -109,6 +108,10 @@ namespace Hr_management.MVC.Services
             }
             else
             {
+                foreach (var item in apiResponse.Result.Errors)
+                {
+                    response.ValidationErrors += item;
+                }
                 response.Success = false;
             }
             return response;

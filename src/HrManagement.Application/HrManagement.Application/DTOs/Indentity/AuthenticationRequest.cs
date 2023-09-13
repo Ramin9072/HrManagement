@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-namespace HrManagement.Application.DTOs.Indentity
+﻿namespace HrManagement.Application.DTOs.Indentity
 {
     public class AuthenticationRequest
     {
